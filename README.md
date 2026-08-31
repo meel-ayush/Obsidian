@@ -1,6 +1,6 @@
 # 🗿 Obsidian
 
-> **Self-hosted private internet gateway — obfuscated VPN that defeats DPI, recursive DNS from root servers, and network-wide ad blocking. One command on any Debian 12 VM.**
+> **Self-hosted private internet gateway — obfuscated VPN that defeats DPI, recursive DNS from root servers, and network-wide ad blocking. One command on any Debian 12 Machine.**
 
 [![AmneziaWG](https://img.shields.io/badge/VPN-AmneziaWG-1a1a1a?style=for-the-badge&logo=wireguard&logoColor=white)](https://docs.amnezia.org/documentation/amnezia-wg/)
 [![Debian 12](https://img.shields.io/badge/OS-Debian%2012-A81D33?style=for-the-badge&logo=debian&logoColor=white)](https://www.debian.org)
@@ -64,7 +64,7 @@ Run `sudo ./obsidian.sh`, answer four prompts, done in ~3 minutes. The script ge
 
 ### Install
 ![Install](screenshots/script.png)
-*One command on a fresh VM. Compiles Unbound and the AmneziaWG DKMS module from source, wires all five services, raises the firewall, prints access URLs.*
+*One command on a fresh Machine. Compiles Unbound and the AmneziaWG DKMS module from source, wires all five services, raises the firewall, prints access URLs.*
 
 ### wg-easy — VPN peer management
 ![wg-easy](screenshots/wgeasy.png)
@@ -281,10 +281,10 @@ Open these in your **cloud provider's firewall** (security group / NSG / firewal
 ```
 
 > [!IMPORTANT]
-> `443/udp` is blocked by default on most cloud providers. Without it the VPN tunnel cannot connect — UFW alone is not enough, the block is at the cloud layer before the VM even sees the packet.
+> `443/udp` is blocked by default on most cloud providers. Without it the VPN tunnel cannot connect — UFW alone is not enough, the block is at the cloud layer before the machine even sees the packet.
 
 > [!WARNING]
-> **If your VM has ≤ 2 GB RAM and no existing swap**, the Unbound compilation and AmneziaWG DKMS build will run out of memory mid-build and fail with a cryptic linker error. The script does **not** create swap automatically. Run this first:
+> **If your machine has ≤ 2 GB RAM and no existing swap**, the Unbound compilation and AmneziaWG DKMS build will run out of memory mid-build and fail with a cryptic linker error. The script does **not** create swap automatically. Run this first:
 >
 > ```bash
 > sudo fallocate -l 2G /swapfile
@@ -293,7 +293,7 @@ Open these in your **cloud provider's firewall** (security group / NSG / firewal
 > echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 > ```
 >
-> On VMs with ≥ 4 GB RAM this is unnecessary — skip it and run the script directly.
+> On machines with ≥ 4 GB RAM this is unnecessary — skip it and run the script directly.
 
 ### Clone and run
 
@@ -481,7 +481,7 @@ Obsidian/
 │                          Generates: reset-server · uninstall-server commands
 │
 ├── screenshots/
-│   ├── script.png       ← Install run on a fresh VM
+│   ├── script.png       ← Install run on a fresh machine
 │   ├── wgeasy.png       ← wg-easy peer management dashboard
 │   ├── adguard.png      ← AdGuard Home DNS filter
 │   └── status.png       ← Live status dashboard
