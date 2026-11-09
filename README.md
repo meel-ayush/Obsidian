@@ -29,6 +29,7 @@
 12. [What I learned](#-what-i-learned)
 13. [Project structure](#-project-structure)
 14. [License](#-license)
+15. [Sponsor & Support](#-sponsor--support)
 
 ---
 
@@ -502,6 +503,35 @@ Licensed under **Creative Commons Attribution-NonCommercial 4.0 International (C
 Free to share and adapt for non-commercial use with attribution. Commercial use requires a separate license — contact via [LinkedIn](https://www.linkedin.com/in/ayushmeel).
 
 [LICENSE](LICENSE) · [CC BY-NC 4.0 Legal Code](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+
+---
+
+<a id="sponsor--support"></a>
+
+## 💖 Support the Engineering
+
+> *"Why pay $120/year for commercial VPNs that sell your browsing data, or spend days debugging WireGuard handshake drops?"*
+>
+> If Obsidian saved your weekend from configuration hell, kept your traffic unblockable, or gave you peace of mind — consider backing the developer. Independent open-source tools only survive when the people who use them support the craft.
+
+<p align="center">
+  <a href="https://github.com/sponsors/meel-ayush">
+    <img src="https://img.shields.io/badge/Sponsor_on-GitHub-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" height="38"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://patreon.com/meel_ayush">
+    <img src="https://img.shields.io/badge/Support_on-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white" alt="Support on Patreon" height="38"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="upi://pay?pa=ayushmeel@ptyes&pn=Ayush%20Meel&cu=INR&tn=Support%20Obsidian%20Gateway">
+    <img src="https://img.shields.io/badge/Direct_UPI-ayushmeel%40ptyes-00BAF2?style=for-the-badge&logo=googlepay&logoColor=white" alt="Direct UPI" height="38"/>
+  </a>
+</p>
+
+<p align="center">
+  ⚡ <b>Direct UPI (0% Platform Fee):</b> <code>ayushmeel@ptyes</code> &nbsp;|&nbsp; 📱 <a href="upi://pay?pa=ayushmeel@ptyes&pn=Ayush%20Meel&cu=INR&tn=Support%20Obsidian%20Gateway"><b>Open in any UPI App ↗</b></a><br>
+  <sub>Works with Google Pay, PhonePe, Paytm, BHIM, Cred, Navi & all Indian bank apps</sub>
+</p>
 
 ---
 

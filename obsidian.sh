@@ -1045,8 +1045,15 @@ button{font:inherit}
 .actions{display:flex;align-items:center;gap:8px}
 .gateway-state{height:36px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);display:flex;align-items:center;gap:7px;font-size:9px;font-weight:780}
 .gateway-state i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,111,.10)}
-.icon-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:11px;cursor:pointer}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:11px;cursor:pointer;transition:all .15s ease}
+.icon-btn:hover{background:var(--soft);border-color:var(--accent)}
 .icon-btn svg{width:16px}
+
+.sponsor-pill-btn{height:36px;padding:0 13px;border:1px solid rgba(225,29,72,.28);border-radius:999px;background:rgba(225,29,72,.07);color:#e11d48;display:flex;align-items:center;gap:6px;font-size:10px;font-weight:780;cursor:pointer;transition:all .18s cubic-bezier(.4,0,.2,1);outline:none}
+.sponsor-pill-btn svg{width:13px;height:13px;fill:currentColor}
+.sponsor-pill-btn:hover{background:rgba(225,29,72,.15);border-color:rgba(225,29,72,.45);transform:translateY(-1px);box-shadow:0 4px 12px rgba(225,29,72,.12)}
+:root[data-theme="dark"] .sponsor-pill-btn{background:rgba(244,63,94,.12);color:#fb7185;border-color:rgba(244,63,94,.32)}
+:root[data-theme="dark"] .sponsor-pill-btn:hover{background:rgba(244,63,94,.22);border-color:rgba(244,63,94,.55);box-shadow:0 4px 14px rgba(244,63,94,.18)}
 
 .service-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
 .service{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 11px;border:1px solid var(--line);background:var(--panel);border-radius:13px;box-shadow:0 5px 18px rgba(16,24,40,.025)}
@@ -1112,8 +1119,41 @@ button{font:inherit}
 .check p{margin:4px 0 0;font-size:8px;color:var(--muted);line-height:1.4}
 
 .note-row{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:8px;margin-top:18px;padding:0 2px}
-.toast{position:fixed;right:16px;bottom:16px;background:var(--text);color:var(--bg);padding:8px 10px;border-radius:10px;font-size:9px;opacity:0;transform:translateY(6px);transition:.2s}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--text);color:var(--bg);padding:8px 12px;border-radius:10px;font-size:9px;font-weight:600;opacity:0;transform:translateY(6px);transition:all .2s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:99999}
 .toast.show{opacity:1;transform:none}
+
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(8,12,20,.65);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:99990;display:grid;place-items:center;padding:16px;opacity:0;visibility:hidden;transition:all .2s cubic-bezier(.4,0,.2,1)}
+.modal-backdrop.active{opacity:1;visibility:visible}
+.modal-card{width:min(540px,100%);max-height:calc(100vh - 32px);overflow-y:auto;-webkit-overflow-scrolling:touch;box-sizing:border-box;background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.35);padding:24px;transform:scale(0.96) translateY(8px);transition:all .22s cubic-bezier(.34,1.56,.64,1);color:var(--text)}
+.modal-backdrop.active .modal-card{transform:scale(1) translateY(0)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.modal-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:780;color:#e11d48;padding:4px 9px;border-radius:999px;background:rgba(225,29,72,.10);border:1px solid rgba(225,29,72,.22)}
+:root[data-theme="dark"] .modal-badge{color:#fb7185;background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.28)}
+.modal-close{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;border:1px solid var(--line);background:var(--soft);color:var(--text);font-size:18px;cursor:pointer;line-height:1;transition:all .15s ease}
+.modal-close:hover{background:var(--line)}
+.modal-title{margin:0 0 6px;font-size:17px;font-weight:800;letter-spacing:-.03em}
+.modal-sub{margin:0 0 12px;font-size:10px;color:var(--muted);line-height:1.4}
+.modal-desc{font-size:10.5px;color:var(--text);line-height:1.55;padding:12px;border-radius:12px;background:var(--soft);border:1px solid var(--line);margin-bottom:16px}
+.upi-card{padding:14px;border-radius:14px;background:linear-gradient(145deg,rgba(99,91,255,.05),rgba(23,167,199,.05));border:1px solid rgba(99,91,255,.2);margin-bottom:12px}
+.upi-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.upi-title{font-size:11px;font-weight:780;color:var(--text);display:flex;align-items:center;gap:6px}
+.upi-fee-tag{font-size:8px;font-weight:750;padding:2px 7px;border-radius:999px;background:rgba(22,163,111,.12);color:var(--green);border:1px solid rgba(22,163,111,.25)}
+.upi-copy-row{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);padding:7px 10px;border-radius:10px;margin-bottom:10px}
+.upi-val{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:11px;font-weight:700;color:var(--accent);flex:1;letter-spacing:.02em}
+.copy-btn-action{padding:5px 11px;border-radius:7px;border:1px solid var(--line);background:var(--soft);color:var(--text);font-size:9.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .15s ease}
+.copy-btn-action:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.upi-open-btn{width:100%;height:36px;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:10px;background:linear-gradient(135deg,#6159ff,#8a82ff);color:#fff;text-decoration:none;font-size:11px;font-weight:780;box-shadow:0 6px 18px rgba(99,91,255,.25);transition:all .16s ease}
+.upi-open-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(99,91,255,.35)}
+.platforms-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.platform-btn{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border:1px solid var(--line);background:var(--soft);border-radius:12px;color:var(--text);text-decoration:none;transition:all .16s ease}
+.platform-btn:hover{border-color:var(--accent);transform:translateY(-1px);background:var(--panel)}
+.platform-btn-left{display:flex;align-items:center;gap:8px}
+.platform-icon{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line);font-size:12px}
+.platform-name{font-size:10px;font-weight:780}
+.platform-sub{font-size:7.5px;color:var(--muted);margin-top:1px}
+.platform-arrow{font-size:11px;color:var(--muted);font-weight:700}
+.modal-footer{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);font-size:8px;color:var(--muted);line-height:1.4;text-align:center}
 
 @media(max-width:1080px){
   .service-strip{grid-template-columns:repeat(3,1fr)}
@@ -1126,6 +1166,7 @@ button{font:inherit}
   .service-strip{grid-template-columns:1fr 1fr}
   .grid{gap:10px}
   .dns-highlight{grid-template-columns:1fr}
+  .platforms-grid{grid-template-columns:1fr}
 }
 @media(max-width:470px){
   .brand p{display:none}
@@ -1154,6 +1195,10 @@ button{font:inherit}
     </div>
   </div>
   <div class="actions">
+    <button class="sponsor-pill-btn" id="sponsorOpen" aria-label="Sponsor project" title="Support developer">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <span>Support</span>
+    </button>
     <div class="gateway-state" id="gatewayState"><i></i><span>GATEWAY ONLINE</span></div>
     <button class="icon-btn" id="refresh" aria-label="Refresh">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -1310,9 +1355,78 @@ button{font:inherit}
 </main>
 
 <div class="note-row">
-  <span>Obsidian Gateway · infrastructure only — peer management stays in wg-easy, DNS filtering details stay in AdGuard Home</span>
+  <span>Obsidian Gateway · Crafted by <a href="https://github.com/meel-ayush" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;font-weight:700">Ayush Meel</a> · <button id="noteSponsorBtn" style="background:none;border:none;color:var(--accent);cursor:pointer;padding:0;margin:0;font:inherit;font-size:inherit;line-height:inherit;display:inline;vertical-align:baseline"><span style="text-decoration:underline">Support this project</span> <span style="text-decoration:none;display:inline-block">❤️</span></button> · infrastructure only</span>
   <span id="updated">Updated just now</span>
 </div>
+</div>
+
+
+<div class="modal-backdrop" id="sponsorModal" role="dialog" aria-modal="true" aria-labelledby="sponsorTitle">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div class="modal-badge">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span>Support the Creator</span>
+      </div>
+      <button class="modal-close" id="sponsorClose" aria-label="Close dialog">&times;</button>
+    </div>
+
+    <h2 class="modal-title" id="sponsorTitle">Support the Engineering • Keep it 100% Independent</h2>
+    <p class="modal-sub">Engineered by <strong>Ayush Meel</strong> • Zero venture funding • Zero corporate telemetry • 100% transparent shell craft</p>
+
+    <div class="modal-desc">
+      <div style="font-size:11px;font-weight:780;color:#f1f5f9;margin-bottom:6px">"Why pay $120/year for commercial VPNs that sell your browsing data?"</div>
+      If Obsidian saved your weekend from configuration hell, MTU blackholes, or handshake drops on restrictive networks — consider dropping a small tip to back the developer. There are no corporate paywalls or venture capital here. Every contribution directly funds VPS test nodes, upstream AmneziaWG kernel tracking, and keeping this private gateway free and unblockable for everyone.
+    </div>
+
+    <div class="upi-card">
+      <div class="upi-card-head">
+        <div class="upi-title">
+          <span>⚡ Instant UPI Transfer</span>
+          <span class="upi-fee-tag">0% Fee • Instant</span>
+        </div>
+      </div>
+      <p style="font-size:8.5px;color:var(--muted);margin:0 0 8px;line-height:1.4">Direct support from any Indian UPI app — Google Pay, PhonePe, Paytm, BHIM, Cred, or bank apps.</p>
+      <div class="upi-copy-row">
+        <span class="upi-val" id="upiText">ayushmeel@ptyes</span>
+        <button class="copy-btn-action" id="copyUpiBtn">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span id="copyUpiLabel">Copy UPI</span>
+        </button>
+      </div>
+      <a href="upi://pay?pa=ayushmeel@ptyes&pn=Ayush%20Meel&cu=INR&tn=Support%20Obsidian%20Gateway%20by%20Ayush%20Meel" class="upi-open-btn" id="upiIntentBtn">
+        <span>Open in any UPI App ↗</span>
+      </a>
+    </div>
+
+    <div class="platforms-grid">
+      <a href="https://github.com/sponsors/meel-ayush" target="_blank" rel="noopener noreferrer" class="platform-btn">
+        <div class="platform-btn-left">
+          <div class="platform-icon">🐙</div>
+          <div>
+            <div class="platform-name">GitHub Sponsors</div>
+            <div class="platform-sub">Support Ayush Meel on GitHub</div>
+          </div>
+        </div>
+        <div class="platform-arrow">↗</div>
+      </a>
+
+      <a href="https://patreon.com/meel_ayush" target="_blank" rel="noopener noreferrer" class="platform-btn">
+        <div class="platform-btn-left">
+          <div class="platform-icon">🎨</div>
+          <div>
+            <div class="platform-name">Patreon</div>
+            <div class="platform-sub">Support Ayush Meel on Patreon</div>
+          </div>
+        </div>
+        <div class="platform-arrow">↗</div>
+      </a>
+    </div>
+
+    <div class="modal-footer">
+      Every contribution directly covers VPS lab expenses, domain maintenance, and independent open-source engineering. Thank you for making open source sustainable!
+    </div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -1334,6 +1448,13 @@ const SAMPLE={
 
 const $=id=>document.getElementById(id);
 
+function showToast(msg){
+  const t=$("toast");
+  if(!t)return;
+  t.textContent=msg;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),1600);
+}
 
 function animateNum(id,to,fmt){
   const el=$(id);
@@ -1463,17 +1584,48 @@ async function refresh(){
 
 $("refresh").onclick=()=>{
   refresh();
-  const t=$("toast");t.textContent="Updated";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1200)
+  showToast("Updated");
 };
 $("theme").onclick=()=>{
   const root=document.documentElement,next=root.dataset.theme==="dark"?"light":"dark";
   root.dataset.theme=next;localStorage.setItem("obsidian-theme",next)
 };
 document.documentElement.dataset.theme=localStorage.getItem("obsidian-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");
+
+
+const sModal=$("sponsorModal");
+function openSponsorModal(){
+  if(sModal)sModal.classList.add("active");
+}
+function closeSponsorModal(){
+  if(sModal)sModal.classList.remove("active");
+}
+$("sponsorOpen").onclick=openSponsorModal;
+if($("noteSponsorBtn"))$("noteSponsorBtn").onclick=openSponsorModal;
+$("sponsorClose").onclick=closeSponsorModal;
+sModal.onclick=e=>{if(e.target===sModal)closeSponsorModal();};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sModal.classList.contains("active"))closeSponsorModal();});
+
+$("copyUpiBtn").onclick=()=>{
+  const upiId="ayushmeel@ptyes";
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(upiId).then(()=>{
+      $("copyUpiLabel").textContent="Copied! ✨";
+      showToast("UPI ID copied: ayushmeel@ptyes");
+      setTimeout(()=>{$("copyUpiLabel").textContent="Copy UPI";},2000);
+    }).catch(()=>{
+      prompt("Copy UPI ID:",upiId);
+    });
+  }else{
+    prompt("Copy UPI ID:",upiId);
+  }
+};
+
 render(SAMPLE,true);refresh();setInterval(refresh,1000);
 </script>
 </body>
 </html>
+
 STATUS_HTML_EOF
 chmod 755 /var/www/status
 chmod 644 /var/www/status/index.html
